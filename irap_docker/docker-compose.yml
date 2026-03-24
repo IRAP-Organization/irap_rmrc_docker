@@ -1,0 +1,49 @@
+services:
+  ros2_humble:
+    build: .
+    image: ros2_humble_custom
+    container_name: ros2_humble
+
+    # Bridge all network ports
+    network_mode: host
+    
+    
+    # Required for device + socket + gpio access
+    privileged: true
+
+    devices:
+      # Serial devices
+      - /dev/ttyHSM0:/dev/ttyHSM0
+      - /dev/ttyHS1:/dev/ttyHS1
+      - /dev/ttyMSM0:/dev/ttyMSM0
+      # GPIO chips — add/remove lines to match your board
+      - /dev/gpiochip0:/dev/gpiochip0
+      - /dev/gpiochip1:/dev/gpiochip1
+      - /dev/gpiochip2:/dev/gpiochip2
+      - /dev/gpiochip3:/dev/gpiochip3
+
+    volumes:
+      # Persistent irap workspace
+      - /home/arduino/ros2_humble/data:/home/arduino/ros2_humble/data
+      # User workspace zone
+      - /home/arduino/ros2_humble/data/workspace_zone:/workspace_zone
+      # Host arduino-router binary (read-only)
+      - /usr/bin/arduino-router:/usr/bin/arduino-router:ro
+      # Host /var/run — shares socket path with host
+      - /var/run:/var/run
+      # GPIO sysfs (legacy gpio access via /sys/class/gpio)
+      #- /sys/class/gpio:/sys/class/gpio
+      
+      - /home/arduino/irap_docker/data:/home/arduino
+      - /home/arduino/:/workspace_zone
+      - /var/run/arduino-router.sock:/var/run/arduino-router.sock
+    # Keep container running
+    stdin_open: true
+    tty: true
+
+    environment:
+      - ROS_DOMAIN_ID=0
+      - RMW_IMPLEMENTATION=rmw_fastrtps_cpp
+
+    entrypoint: /entrypoint.sh
+    command: bash

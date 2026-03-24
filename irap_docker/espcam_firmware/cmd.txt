@@ -1,0 +1,2 @@
+esptool.py --chip esp32s3 --port /dev/ttyACM0 --baud 460800 write_flash 0x0000 bootloader.bin  0x10000 firmware.bin
+pip install esptool // when you dont have esptool
