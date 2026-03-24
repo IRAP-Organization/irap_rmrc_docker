@@ -29,8 +29,6 @@ A ROS2 node that receives streamed JPEG frames from an ESP32-CAM over a serial l
 3. Install `esptool` if it is not already available:
    ```bash
    pip install esptool
-   # or on Ubuntu/Linux:
-   sudo apt install esptool
    ```
 4. Connect the ESP32-CAM to your computer, then run the following command. Replace `--port` with your actual port.
    - **Linux/Ubuntu:** check available ports with `ls /dev/tty*`
