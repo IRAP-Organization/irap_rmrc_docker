@@ -115,11 +115,10 @@ A ROS2 node that receives streamed JPEG frames from an ESP32-CAM over a serial l
 ### System Requirements
 
 - **Ubuntu 22.04** (tested; other 22.04-based distributions should work)![rqt_reconfig](https://raw.githubusercontent.com/IRAP-Organization/irap_espcam_ros2_driver/refs/heads/main/res/543329938-659c9465-a19c-4e28-9193-fa1a96ef77cd.gif?token=GHSAT0AAAAAADUPS7EPHBJVN4TICMN7QTRC2L6N3JQ)
-
+  
 ![rqt_reconfig](https://raw.githubusercontent.com/IRAP-Organization/irap_espcam_ros2_driver/refs/heads/main/res/543330759-e8355090-3169-493b-a8c1-39b1a118b21f.gif?token=GHSAT0AAAAAADUPS7EO7E7RWVTFN5Y6T3LQ2L6N2NA)
 
 - **Latency Test**
-
 ![latency](https://github.com/IRAP-Organization/irap_espcam_ros2_driver/blob/main/res/543329847-62b87421-0384-44fe-b76e-9ae657ba1d1a.gif?raw=true)
 
 
