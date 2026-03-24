@@ -96,7 +96,11 @@ A ROS2 node that receives streamed JPEG frames from an ESP32-CAM over a serial l
    ```bash
    sudo docker compose exec ros2_humble bash
    ```
-7. Launch the ROS2 node. If everything is connected and configured correctly, you should see frame rate statistics similar to:
+7. ros2 launch inside the container:
+   ```bash
+   ros2 launch irap_recam irap_recam_launch.py
+   ```
+8. Launch the ROS2 node. If everything is connected and configured correctly, you should see frame rate statistics similar to:
    ```
    [irap_recam] FPS: 10.16 | FrameID:  65 | Size: 32764 | Resolution: 640x480 | Processing: 14ms | Serial latency: 171.98ms
    [irap_recam] FPS: 10.24 | FrameID:  78 | Size: 32776 | Resolution: 640x480 | Processing: 16ms | Serial latency:  71.15ms
