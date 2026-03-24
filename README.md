@@ -122,10 +122,6 @@ A ROS2 node that receives streamed JPEG frames from an ESP32-CAM over a serial l
 
 ![latency](https://github.com/IRAP-Organization/irap_espcam_ros2_driver/blob/main/res/543329847-62b87421-0384-44fe-b76e-9ae657ba1d1a.gif?raw=true)
 
-- **Latency Snapshots**
-
-<img width="640" height="480" alt="Latency snapshot 1" src="https://raw.githubusercontent.com/IRAP-Organization/irap_espcam_ros2_driver/refs/heads/main/res/543328950-6cbc1027-7fd1-456b-8818-4a9dbbde434d.png?token=GHSAT0AAAAAADUPS7EPDWPG3H6HVZCRBIBU2L6NSSA" />
-<img width="640" height="480" alt="Latency snapshot 2" src="https://raw.githubusercontent.com/IRAP-Organization/irap_espcam_ros2_driver/refs/heads/main/res/20260201_030449(1).jpg?token=GHSAT0AAAAAADUPS7EOU66MWN7EBWRBEUBQ2L6NZDQ" />
 
 - **ROS2 Humble**
 - C++17-capable compiler (`g++ ≥ 11`)
