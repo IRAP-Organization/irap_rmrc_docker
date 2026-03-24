@@ -136,7 +136,7 @@ Override defaults via command-line arguments:
 ```bash
 ros2 run irap_recam irap_recam --ros-args \
     -p device:=/dev/ttyUSB0 \
-    -p baudrate:=1000000
+    -p baudrate:=4000000
 ```
 
 ### Launch File
@@ -152,7 +152,7 @@ device_arg = DeclareLaunchArgument(
 
 baudrate_arg = DeclareLaunchArgument(
     'baudrate',
-    default_value='1000000',
+    default_value='4000000',
     description='Serial baud rate'
 )
 ```
