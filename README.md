@@ -114,59 +114,24 @@ A ROS2 node that receives streamed JPEG frames from an ESP32-CAM over a serial l
 
 ### System Requirements
 
-- **Ubuntu 22.04** (tested; other 22.04-based distributions should work)
+- **Ubuntu 22.04** (tested; other 22.04-based distributions should work)![rqt_reconfig](https://raw.githubusercontent.com/IRAP-Organization/irap_espcam_ros2_driver/refs/heads/main/res/543329938-659c9465-a19c-4e28-9193-fa1a96ef77cd.gif?token=GHSAT0AAAAAADUPS7EPHBJVN4TICMN7QTRC2L6N3JQ)
+
+![rqt_reconfig](https://raw.githubusercontent.com/IRAP-Organization/irap_espcam_ros2_driver/refs/heads/main/res/543330759-e8355090-3169-493b-a8c1-39b1a118b21f.gif?token=GHSAT0AAAAAADUPS7EO7E7RWVTFN5Y6T3LQ2L6N2NA)
+
+- **Latency Test**
+
+![latency](https://github.com/IRAP-Organization/irap_espcam_ros2_driver/blob/main/res/543329847-62b87421-0384-44fe-b76e-9ae657ba1d1a.gif?raw=true)
+
+- **Latency Snapshots**
+
+<img width="640" height="480" alt="Latency snapshot 1" src="https://raw.githubusercontent.com/IRAP-Organization/irap_espcam_ros2_driver/refs/heads/main/res/543328950-6cbc1027-7fd1-456b-8818-4a9dbbde434d.png?token=GHSAT0AAAAAADUPS7EPDWPG3H6HVZCRBIBU2L6NSSA" />
+<img width="640" height="480" alt="Latency snapshot 2" src="https://raw.githubusercontent.com/IRAP-Organization/irap_espcam_ros2_driver/refs/heads/main/res/20260201_030449(1).jpg?token=GHSAT0AAAAAADUPS7EOU66MWN7EBWRBEUBQ2L6NZDQ" />
+
 - **ROS2 Humble**
 - C++17-capable compiler (`g++ ≥ 11`)
 
 ### ROS2 Packages
 
-```bash
-sudo apt update && sudo apt install -y \
-    ros-humble-rclcpp \
-    ros-humble-std-msgs \
-    ros-humble-sensor-msgs \
-    ros-humble-image-transport \
-    ros-humble-cv-bridge \
-    ros-humble-image-view
-```
-
-### System Libraries
-
-```bash
-sudo apt install -y \
-    libboost-all-dev \
-    libopencv-dev
-```
-
----
-
-## Build
-
-```bash
-# Source ROS2 if not already done
-source /opt/ros/humble/setup.bash
-
-# Clone this repository into your colcon workspace
-mkdir -p ~/ros2_ws/src
-cd ~/ros2_ws/src
-git clone <this-repo-url>
-
-# Build the package
-cd ~/ros2_ws
-colcon build --packages-select irap_recam
-
-# Source the install overlay
-source install/setup.bash
-```
-
----
-
-## Run
-
-> **Permission note:** If you encounter a permission error on the serial device, grant access with:
-> ```bash
-> sudo chmod 777 /dev/ttyUSB0   # replace with your actual device path
-> ```
 
 ### Direct Run
 
@@ -298,19 +263,6 @@ FPS: 44.2 | FrameID: 1042 | Size: 18765 | Resolution: 640x480 | Processing: 1ms 
 ## Overview
 
 - **Runtime reconfiguration** of ESP32-CAM settings directly from `rqt`
-
-![rqt_reconfig](https://raw.githubusercontent.com/IRAP-Organization/irap_espcam_ros2_driver/refs/heads/main/res/543329938-659c9465-a19c-4e28-9193-fa1a96ef77cd.gif?token=GHSAT0AAAAAADUPS7EPHBJVN4TICMN7QTRC2L6N3JQ)
-
-![rqt_reconfig](https://raw.githubusercontent.com/IRAP-Organization/irap_espcam_ros2_driver/refs/heads/main/res/543330759-e8355090-3169-493b-a8c1-39b1a118b21f.gif?token=GHSAT0AAAAAADUPS7EO7E7RWVTFN5Y6T3LQ2L6N2NA)
-
-- **Latency Test**
-
-![latency](https://github.com/IRAP-Organization/irap_espcam_ros2_driver/blob/main/res/543329847-62b87421-0384-44fe-b76e-9ae657ba1d1a.gif?raw=true)
-
-- **Latency Snapshots**
-
-<img width="640" height="480" alt="Latency snapshot 1" src="https://raw.githubusercontent.com/IRAP-Organization/irap_espcam_ros2_driver/refs/heads/main/res/543328950-6cbc1027-7fd1-456b-8818-4a9dbbde434d.png?token=GHSAT0AAAAAADUPS7EPDWPG3H6HVZCRBIBU2L6NSSA" />
-<img width="640" height="480" alt="Latency snapshot 2" src="https://raw.githubusercontent.com/IRAP-Organization/irap_espcam_ros2_driver/refs/heads/main/res/20260201_030449(1).jpg?token=GHSAT0AAAAAADUPS7EOU66MWN7EBWRBEUBQ2L6NZDQ" />
 
 ---
 
