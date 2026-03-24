@@ -216,8 +216,8 @@ ros2 param set /irap_recam cam_resolution 5   # QVGA 320×240
 
 | Parameter  | Type   | Default        | Description                     |
 |------------|--------|----------------|---------------------------------|
-| `device`   | string | `/dev/ttyACM0` | Serial device path              |
-| `baudrate` | int    | `1000000`      | Serial baud rate (minimum 9600) |
+| `device`   | string | `/dev/ttyMSM0` | Serial device path              |
+| `baudrate` | int    | `4000000`      | Serial baud rate (minimum 9600) |
 
 ---
 
